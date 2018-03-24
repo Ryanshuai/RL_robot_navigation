@@ -18,8 +18,8 @@ class DQN():
         self.delta_e = (self.init_e - self.final_e)/self.num_e_change
         self.e = self.init_e
 
-        self.memory = []
         self.memory_size = 10000
+        self.memory = []
         self.memory_counter = 0
 
     def choose_action(self, x):
@@ -47,6 +47,12 @@ class DQN():
 
     def train_net(self):
         sample_index = np.random.choice(self.memory_size, self.BS)
+        BS_memory = np.array(self.memory)[sample_index]
+        BS_s = BS_memory[:, 0]
+        BS_a = BS_memory[:, 1]
+        BS_r = BS_memory[:, 2]
+        BS_s_ = BS_memory[:, 3]
+
 
     def update_parameter(self):
         self.frozen_net.load_state_dict(self.training_net.state_dict())
