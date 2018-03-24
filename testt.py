@@ -6,7 +6,7 @@ memory_size = 9
 memory = [0]*memory_size
 print(memory)
 
-sars_ = [np.array([0, 2]), 'a', 0, np.array([0, 4])]
+sars_ = [[0, 2], 'a', 0, [0, 4]]
 
 for i in range(memory_size):
     temp = cp.deepcopy(sars_)
@@ -27,7 +27,11 @@ BS_a = BS_memory[:, 1]
 BS_r = BS_memory[:, 2]
 BS_s_ = BS_memory[:, 3]
 
+print('----------------')
 print(BS_s)
-print(BS_a)
-print(BS_r)
-print(BS_s_)
+print(BS_s.size)
+print(type(BS_s))
+
+# print(BS_a)
+# print(BS_r)
+# print(BS_s_)
